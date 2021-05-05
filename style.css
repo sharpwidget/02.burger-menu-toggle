@@ -1,0 +1,88 @@
+:root {
+  /* Colors */
+  --primary: #13ACCD;
+  --primary-dark: #128DA9;
+  --dark: #393939;
+  --background: #F6F6F6;
+
+  /* Global */
+  --transition: 400ms;
+}
+
+/* -------------------------------------------------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--background);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--primary);
+}
+
+/* -------------------------------------------------------------------------- */
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 20px;
+  width: 32px;
+  transition: transform var(--transition), width var(--transition);
+}
+
+.burger-on {
+  transform: rotate(-180deg);
+}
+
+/* -------------------------------------------------------------------------- */
+
+.burger-line {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  transition: all var(--transition);
+}
+
+.burger-on .burger-line:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.burger-on .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-on .burger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
